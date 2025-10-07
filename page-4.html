@@ -11,21 +11,21 @@
         <h1>Aves Chilenas</h1>
         <ul>
             <li><a href="index.html">Portada</a></li>
-            <li><a href="page-1.html">page-1</a></li>
-            <li><a href="page-2.html">page-2</a></li>
-            <li><a href="page-3.html">page-3</a></li>
-            <li><a href="page-4.html" class="active">page-4</a></li>
-            <li><a href="page-5.html">page-5</a></li>
-            <li><a href="page-6.html">page-6</a></li>
+            <li><a href="page-1.html">Aves Cantoras</a></li>
+            <li><a href="page-2.html">Aves Playeras</a></li>
+            <li><a href="page-3.html">Aves Acuáticas</a></li>
+            <li><a href="page-4.html" class="active">Aves de Presa</a></li>
+            <li><a href="page-5.html">Pelícanos</a></li>
+            <li><a href="page-6.html">Colibríes y Vencejos</a></li>
         </ul>
     </nav>
     <div class="container">
-        <h2>page-4</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et dignissim ligula, id vestibulum mauris. Curabitur libero orci, ultrices eu risus vehicula, consequat pretium sem. Fusce dolor arcu, cursus a justo sit amet, dapibus aliquam tellus. Morbi a orci at lectus eleifend varius fermentum quis neque.</p>
+        <h2>Aves de Presa</h2>
+        <p>Aves rapaces diurnas de tamaño medio a grande. Se caracterizan por sus picos ganchudos y sus poderosas garras para cazar. Este grupo incluye a los aguiluchos (Buteo spp.), el Águila (Geranoaetus melanoleucus) y el Bailarín (Elanus leucurus).</p>
         <div class="grid" id="grid"></div>
     </div>
     <footer>
-        <p>Desarrollado por <a href="#" target="_blank">Nombre Apellido</a> &copy; 2025</p>
+        <p>Desarrollado por <a href="#" target="_blank">Irenko Blasco Meier</a> &copy; 2025</p>
     </footer>
     <script>
         const grid = document.getElementById('grid');
@@ -37,7 +37,7 @@
                 console.log(data);
                 let conteo = 1;
                 data.forEach((a) => {
-                    //if(){                    
+                    if(a.info.order.value.includes ("Accipitriformes")){                    
                     grid.innerHTML += `
                         <div class="grid-item">
                             <img src="${a.image.url.replace("http://www.buscaves.cl/", "https://buscaves.cl/")}" alt="${a.names.spanish}"/>
@@ -46,7 +46,7 @@
                         </div>
                     `;
                     conteo++;
-                    //};
+                    };
                 });
             } catch (error) {
                 console.error('Error al cargar los datos:', error);
