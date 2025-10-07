@@ -20,8 +20,8 @@
         </ul>
     </nav>
     <div class="container">
-        <h2>page-1</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam et dignissim ligula, id vestibulum mauris. Curabitur libero orci, ultrices eu risus vehicula, consequat pretium sem. Fusce dolor arcu, cursus a justo sit amet, dapibus aliquam tellus. Morbi a orci at lectus eleifend varius fermentum quis neque.</p>
+        <h2>Passeriformes</h2>
+        <p>El orden más grande de las aves en general, a menudo llamadas "pájaros cantores" o "pájaros percheros" debido a sus patas adaptadas para agarrarse a las ramas. Este grupo incluye una vasta diversidad de familias como los tapaculos (Rhinocryptidae), el Chincol, el Zorzal, los Cometocinos, los Diucones y muchas otras especies pequeñas y medianas esenciales en los ecosistemas terrestres chilenos.</p>
         <div class="grid" id="grid"></div>
     </div>
     <footer>
@@ -37,7 +37,7 @@
                 console.log(data);
                 let conteo = 1;
                 data.forEach((a) => {
-                    //if(){                    
+                    if(a.info.order.value.includes ("Passeriformes")){                    
                     grid.innerHTML += `
                         <div class="grid-item">
                             <img src="${a.image.url.replace("http://www.buscaves.cl/", "https://buscaves.cl/")}" alt="${a.names.spanish}"/>
@@ -46,7 +46,7 @@
                         </div>
                     `;
                     conteo++;
-                    //};
+                    };
                 });
             } catch (error) {
                 console.error('Error al cargar los datos:', error);
